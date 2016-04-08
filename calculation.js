@@ -1,4 +1,4 @@
-// 解析算数表达式 求结果
+// 解析算数表达式 求结果1
 
 function cal(str){
 	var numArr = [],opArr = []
