@@ -26,4 +26,4 @@ function dfs(n){
 
 dfs(0)
 console.log(marked)
-console.log(tmp)
+console.log(tmp)earch
