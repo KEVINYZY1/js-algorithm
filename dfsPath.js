@@ -9,21 +9,39 @@ var arr = [
 	
 ]
 var marked = new Array(arr.length)
-var tmp = ''
+var edgeTo = new Array(arr.length)
+
 function dfs(n){
-	tmp += '\ndfs'+n
 	marked[n] = true
 	for (var i = 0; i < arr[n].length; i++) {
-		tmp +='>'
 		if(!marked[arr[n][i]]){
-			
+			edgeTo[arr[n][i]] = n			
 			dfs(arr[n][i])
-		}else{
-			tmp+= arr[n][i]+ ':marked'
 		}
 	};
 }
 
 dfs(0)
-console.log(marked)
-console.log(tmp)earch
+
+function hasPath(v){
+	return marked[v]
+}
+function pathTo(start,end){
+	var path = []
+	for(var x=end;x!=start;x=edgeTo[x]){
+		path.unshift(x)
+	}
+	path.unshift(start)
+	return path
+}
+
+console.log(pathTo(0,1).join('->'))
+console.log(pathTo(0,2).join('->'))
+console.log(pathTo(0,3).join('->'))
+console.log(pathTo(0,4).join('->'))
+console.log(pathTo(0,5).join('->'))
+
+
+console.log(hasPath(2))
+
+
