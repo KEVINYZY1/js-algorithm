@@ -10,6 +10,9 @@
     - [希尔排序](shellSort.js)
 * 查找
     - [二分查找](binarySearch.js)
+    - 查找树
+    - 红黑树
+    - 哈希
 * 图
     - [深度优先遍历所有结点](dfsSearch.js)
     - [深度优先查找路径](dfsPath.js)
