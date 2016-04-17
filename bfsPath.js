@@ -9,23 +9,30 @@ var arr = [
 	
 ]
 var marked = new Array(arr.length)
+var tmp = ''
 var edgeTo = new Array(arr.length)
-
-function dfs(n){
+function bfs(n){
+	queue = []
+	tmp += '\nbfs'+n+'go\n'
 	marked[n] = true
-	for (var i = 0; i < arr[n].length; i++) {
-		if(!marked[arr[n][i]]){
-			edgeTo[arr[n][i]] = n			
-			dfs(arr[n][i])
+	queue.push(n)
+	while(queue.length){
+		num = queue.shift()
+		for (var i = 0; i < arr[num].length; i++) {
+			var tmp_num = arr[num][i]
+			if (!marked[tmp_num]) {
+				edgeTo[tmp_num] = num
+				marked[tmp_num] = true
+				queue.push(tmp_num)
+				tmp+=arr[num][i]+'\n'
+			}else{
+				tmp+=arr[num][i]+'marked\n'
+			}
 		}
-	};
+
+	}
 }
 
-dfs(0)
-
-function hasPath(v){
-	return marked[v]
-}
 function pathTo(start,end){
 	var path = []
 	for(var x=end;x!=start;x=edgeTo[x]){
@@ -35,6 +42,11 @@ function pathTo(start,end){
 	return path
 }
 
+
+
+
+bfs(0)
+
 console.log(pathTo(0,1).join('->'))
 console.log(pathTo(0,2).join('->'))
 console.log(pathTo(0,3).join('->'))
@@ -42,6 +54,4 @@ console.log(pathTo(0,4).join('->'))
 console.log(pathTo(0,5).join('->'))
 
 
-console.log(hasPath(2))
-
-
+console.log(edgeTo)
