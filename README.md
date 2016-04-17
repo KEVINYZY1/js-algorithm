@@ -16,5 +16,6 @@
 * 图
     - [深度优先遍历所有结点](dfsSearch.js)
     - [深度优先查找路径](dfsPath.js)
+    - [深度优先连通分量](dfsCC.js)
     - [广度优先遍历所有结点](bfsSearch.js)
     - [广度优先查找路径](bfsPath.js)
