@@ -20,3 +20,4 @@
     - [广度优先遍历所有结点](bfsSearch.js)
     - [广度优先查找路径](bfsPath.js)
     - [深度优先寻找有向环](dfsDirectedCycle.js)
+    - [深度优先前后逆后遍历有向图](dfsPrePostSearch.js)
